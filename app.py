@@ -7,7 +7,7 @@ movies_list = movies['title'].values
 
 st.header("Movie Recommender System")
 selected_value = st.selectbox("Select a movie from dropdown",movies_list)
-
+#make sure to run ipynb file first
 def recommend(movie):
     index = movies[movies['title'] == movie].index[0]
     distance = sorted(list(enumerate(similarity[index])), reverse=True,key=lambda vector:vector[1])
